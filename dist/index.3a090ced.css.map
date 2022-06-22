@@ -1,0 +1,1 @@
+{"mappings":"ACAA,2BAA2B","sources":["index.3a090ced.css","src/styles.css"],"sourcesContent":["body {\n  background-color: #00f;\n}\n\nbody #root {\n  background-color: #f0f8ff;\n}\n\n/*# sourceMappingURL=index.3a090ced.css.map */\n","@import 'base/base.css'"],"names":[],"version":3,"file":"index.3a090ced.css.map"}

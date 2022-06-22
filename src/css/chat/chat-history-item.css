@@ -1,0 +1,83 @@
+@import '../variables.css';
+
+.chat-history-item {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 10px;
+    width: 300px;
+}
+
+.chat-history-item::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 0;
+    width: 95%;
+    border-bottom: 1px solid $lighter-gray;
+}
+
+.image-container {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+
+    & img {
+        display: inline;
+        margin: 0 auto;
+        height: 100%;
+        width: auto;
+    }
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.chat-name {
+    font-style: normal;
+    font-weight: 600;
+    /* font-size: 13px;
+    line-height: 13px; */
+    color: $dark-gray
+}
+
+.chat-history-text {
+    color: $light-gray;
+}
+
+.date-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+    /* align-items: right; */
+}
+
+.date {}
+
+.bage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: $color-primary;
+    color: white;
+    position: relative;
+    /* padding: 2px; */
+}
+
+.bage-number {
+    padding-top: 2px;
+    /* display: block; */
+    /* display: block; */
+    /* position: absolute;
+    top: 0;
+    left: 10px */
+}
