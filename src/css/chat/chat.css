@@ -114,3 +114,8 @@
     border-radius: 30px;
     border:none;
 }
+
+.message-time{
+    float: right;
+    font-size: .8rem;
+}

@@ -432,4 +432,9 @@ div {
   padding: 10px 20px;
 }
 
+.message-time {
+  float: right;
+  font-size: .8rem;
+}
+
 /*# sourceMappingURL=index.4d663569.css.map */
