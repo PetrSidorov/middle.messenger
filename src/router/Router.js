@@ -1,4 +1,5 @@
 // import Login from '../pages/login/index';
+import Page from '../modules/Page';
 export default class Router {
     constructor(root, routes) {
         this.root = root;
@@ -8,8 +9,9 @@ export default class Router {
 
     init() {
         console.log('init')
-        const login = new this.routes.Login
-        login.render(root, login.parameters)
+        const login = new Page
+        // this.routes.Login
+        login.render(root, 'login')
         window.addEventListener('hashchange', this.changeRoute)
         this.changeRoute()
     }

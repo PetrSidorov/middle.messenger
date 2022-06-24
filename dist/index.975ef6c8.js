@@ -542,39 +542,12 @@ new (0, _routerDefault.default)("#app", {
     Login: (0, _indexDefault.default)
 });
 
-},{"./styles.css":"lW6qc","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./router/Router":"khLEj","./pages/login/index":"5dBIA"}],"lW6qc":[function() {},{}],"gkKU3":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"khLEj":[function(require,module,exports) {
+},{"./styles.css":"lW6qc","./router/Router":"khLEj","./pages/login/index":"5dBIA","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lW6qc":[function() {},{}],"khLEj":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+// import Login from '../pages/login/index';
+var _page = require("../modules/Page");
+var _pageDefault = parcelHelpers.interopDefault(_page);
 class Router {
     constructor(root, routes){
         this.root = root;
@@ -583,8 +556,9 @@ class Router {
     }
     init() {
         console.log("init");
-        const login = new this.routes.Login;
-        login.render(root, login.parameters);
+        const login = new (0, _pageDefault.default);
+        // this.routes.Login
+        login.render(root, "login");
         window.addEventListener("hashchange", this.changeRoute);
         this.changeRoute();
     }
@@ -601,49 +575,24 @@ class Router {
 }
 exports.default = Router;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5dBIA":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _page = require("../../modules/Page");
-var _pageDefault = parcelHelpers.interopDefault(_page);
-var _loginTmpl = require("./login.tmpl");
-class Login extends (0, _pageDefault.default) {
-    constructor(param){
-        super(param);
-        this.templ = (0, _loginTmpl.templ);
-        this.context = (0, _loginTmpl.context);
-    // this.param = param
-    // console.log('param', param)
-    }
-    get parameters() {
-        return {
-            templ: (0, _loginTmpl.templ),
-            context: (0, _loginTmpl.context)
-        };
-    }
-    render(tmpl, context) {
-        super.render(tmpl, context);
-    }
-}
-exports.default = Login;
-
-},{"../../modules/Page":"dpMFT","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./login.tmpl":"iBNh1"}],"dpMFT":[function(require,module,exports) {
+},{"../modules/Page":"dpMFT","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dpMFT":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _templator = require("../utils/Templator");
 var _templatorDefault = parcelHelpers.interopDefault(_templator);
+var _tmplJs = require("../pages/*/*.tmpl.js");
 class Page {
-    constructor(root, html, context, templ){
-        // this.html = html;
+    constructor(root, context, templ){
         this.root = root;
-        this.context = context;
-        this.templ = templ;
     }
-    test() {
-        console.log("test");
+    getParameters(name) {
+    // const parametersPath = `../pages/${name}/${name}.tmpl`
+    // const parameters = import(parametersPath)
+    // return parameters
     }
-    render(root, { templ , context  }) {
-        // console.log(context)
+    render(root, name) {
+        const templ = _tmplJs[name][name].default.templ;
+        const context = _tmplJs[name][name].default.context;
         const tmpl = new (0, _templatorDefault.default)(templ);
         const renderedTemplate = tmpl.compile(context);
         root.innerHTML = renderedTemplate;
@@ -651,7 +600,7 @@ class Page {
 }
 exports.default = Page;
 
-},{"../utils/Templator":"beJ1N","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"beJ1N":[function(require,module,exports) {
+},{"../utils/Templator":"beJ1N","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../pages/*/*.tmpl.js":"9lixY"}],"beJ1N":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _getJs = require("./get.js");
@@ -700,12 +649,81 @@ function get(obj, path, defaultValue) {
     return result ?? defaultValue;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"iBNh1":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"9lixY":[function(require,module,exports) {
+const _temp0 = require("../404/404.tmpl.js");
+const _temp1 = require("../5**/5**.tmpl.js");
+const _temp2 = require("../chat/chat.tmpl.js");
+const _temp3 = require("../login/login.tmpl.js");
+const _temp4 = require("../registration/registration.tmpl.js");
+const _temp5 = require("../settings/settings.tmpl.js");
+module.exports = {
+    "404": {
+        "404": _temp0
+    },
+    "5**": {
+        "5**": _temp1
+    },
+    "chat": {
+        "chat": _temp2
+    },
+    "login": {
+        "login": _temp3
+    },
+    "registration": {
+        "registration": _temp4
+    },
+    "settings": {
+        "settings": _temp5
+    }
+};
+
+},{"../404/404.tmpl.js":"l5kwb","../5**/5**.tmpl.js":"bNHA8","../chat/chat.tmpl.js":"98xyM","../login/login.tmpl.js":"iBNh1","../registration/registration.tmpl.js":"gVx4s","../settings/settings.tmpl.js":"gNADH"}],"l5kwb":[function(require,module,exports) {
+
+},{}],"bNHA8":[function(require,module,exports) {
+const _temp0 = require("./5**.tmpl.js");
+module.exports = {
+    "**": {
+        "**": _temp0
+    }
+};
+
+},{"./5**.tmpl.js":"bNHA8"}],"98xyM":[function(require,module,exports) {
+
+},{}],"iBNh1":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "templ", ()=>templ);
-parcelHelpers.export(exports, "context", ()=>context);
-const templ = `
+const parameters = {
+    templ: `
 <form class="authorization-form">
 <h2 class="center-text">Вход</h2>
 <div class="input-section">
@@ -725,20 +743,58 @@ const templ = `
     <button class="button button-link">Нет аккаунта?</button>
 </div>
 </form>
-`;
-const context = {
-    // field1: 'Text 1',
-    // field2: 42,
-    // field3: {
-    //     info: {
-    //         name: 'Simon',
-    //     },
-    // },
-    handleClick: ()=>{
-        console.log("hello");
+`,
+    context: {
+        // field1: 'Text 1',
+        // field2: 42,
+        // field3: {
+        //     info: {
+        //         name: 'Simon',
+        //     },
+        // },
+        handleClick: ()=>{
+            console.log("hello");
+        }
     }
 };
+exports.default = parameters // const templ = `
+ // <form class="authorization-form">
+ // <h2 class="center-text">Вход</h2>
+ // <div class="input-section">
+ //     <div class="form-field">
+ //         <input required pattern="\S+.*" id="username" class="form-text-input" type="text">
+ //         <label class="input-label" for="username" >Логин</label>
+ //     </div>
+ //     <div class="form-field">
+ //         <input required pattern="\S+.*" id="password" class="form-text-input" type="text">
+ //         <label class="input-label" for="password">Пароль</label>
+ //     </div>
+ // </div>
+ // <div class="action-buttons">
+ //     <button onclick="{{ handleClick }}" type="submit" class="button button-primary">Авторизоваться</button>
+ //     <button class="button button-link">Нет аккаунта?</button>
+ // </div>
+ // </form>
+ // `;
+ // const context = {
+ //     // field1: 'Text 1',
+ //     // field2: 42,
+ //     // field3: {
+ //     //     info: {
+ //     //         name: 'Simon',
+ //     //     },
+ //     // },
+ //     handleClick: () => {console.log('hello')}
+ // };
+ // export {templ, context}
+;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["ShInH","8lqZg"], "8lqZg", "parcelRequirefc40")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gVx4s":[function(require,module,exports) {
+
+},{}],"gNADH":[function(require,module,exports) {
+
+},{}],"5dBIA":[function(require,module,exports) {
+
+},{}]},["ShInH","8lqZg"], "8lqZg", "parcelRequirefc40")
 
 //# sourceMappingURL=index.975ef6c8.js.map
