@@ -5,8 +5,9 @@ module.exports = {
   // require('postcss-nested'),
   require('postcss-simple-vars'),
   require('postcss-font-magician'),
+  // require('postcss-modules'),
   require('cssnano'),
   //   require('autoprefixer'),
- 
+
   ]
 }

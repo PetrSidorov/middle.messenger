@@ -1,7 +1,8 @@
-// src/index.js
 
-import {sum} from './modules/sum';
-import './styles.css'
+import './styles.css';
+import Router from './router/Router';
+import Login from './pages/login/index'; 
 
-// const root = document.querySelector('#root');
-// root.textContent = sum(6, -1).toString();
+new Router('#app', {
+    Login
+})
