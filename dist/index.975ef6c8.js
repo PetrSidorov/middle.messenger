@@ -573,7 +573,7 @@ class Router {
 }
 exports.default = Router;
 
-},{"../modules/Page":"dpMFT","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../utils/currentRoute":"kfGDM"}],"dpMFT":[function(require,module,exports) {
+},{"../modules/Page":"dpMFT","../utils/currentRoute":"kfGDM","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dpMFT":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _indexJs = require("../pages/*/index.js");
@@ -602,7 +602,51 @@ class Page {
 }
 exports.default = Page;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../pages/*/index.js":"efSch","../utils/currentRoute":"kfGDM","../utils/applyRenderParameters":"a1T8V"}],"gkKU3":[function(require,module,exports) {
+},{"../pages/*/index.js":"fgbCN","../utils/currentRoute":"kfGDM","../utils/applyRenderParameters":"a1T8V","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fgbCN":[function(require,module,exports) {
+const _temp0 = require("../404/index.js");
+const _temp1 = require("../500/index.js");
+const _temp2 = require("../chat/index.js");
+const _temp3 = require("../login/index.js");
+const _temp4 = require("../registration/index.js");
+const _temp5 = require("../settings/index.js");
+module.exports = {
+    "404": _temp0,
+    "500": _temp1,
+    "chat": _temp2,
+    "login": _temp3,
+    "registration": _temp4,
+    "settings": _temp5
+};
+
+},{"../404/index.js":"3mX9L","../500/index.js":"dhKVG","../chat/index.js":"6IeT6","../login/index.js":"5dBIA","../registration/index.js":"fSkHX","../settings/index.js":"gSXyr"}],"3mX9L":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _404Tmpl = require("./404.tmpl");
+var _404TmplDefault = parcelHelpers.interopDefault(_404Tmpl);
+const context = {
+    handleClick: ()=>{
+        console.log("hello");
+    }
+};
+exports.default = {
+    context,
+    template: (0, _404TmplDefault.default)
+};
+
+},{"./404.tmpl":"l5kwb","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"l5kwb":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+const template = `
+<div class="error-page">
+<div class="error-name">
+    <h1 class="center-text">404</h1>
+    <a class="center-text back-link" href="/">Вернуться к чатам</a>
+</div>
+</div>
+`;
+exports.default = template;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -632,57 +676,7 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"efSch":[function(require,module,exports) {
-const _temp0 = require("../404/index.js");
-const _temp1 = require("../5**/index.js");
-const _temp2 = require("../chat/index.js");
-const _temp3 = require("../login/index.js");
-const _temp4 = require("../registration/index.js");
-const _temp5 = require("../settings/index.js");
-module.exports = {
-    "404": _temp0,
-    "5**": _temp1,
-    "chat": _temp2,
-    "login": _temp3,
-    "registration": _temp4,
-    "settings": _temp5
-};
-
-},{"../404/index.js":"3mX9L","../5**/index.js":"dIHWY","../chat/index.js":"6IeT6","../login/index.js":"5dBIA","../registration/index.js":"fSkHX","../settings/index.js":"gSXyr"}],"3mX9L":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _404Tmpl = require("./404.tmpl");
-var _404TmplDefault = parcelHelpers.interopDefault(_404Tmpl);
-const context = {
-    handleClick: ()=>{
-        console.log("hello");
-    }
-};
-exports.default = {
-    context,
-    template: (0, _404TmplDefault.default)
-};
-
-},{"./404.tmpl":"l5kwb","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"l5kwb":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-const template = `
-<div class="error-page">
-<div class="error-name">
-    <h1 class="center-text">404</h1>
-    <a class="center-text back-link" href="/">Вернуться к чатам</a>
-</div>
-</div>
-`;
-exports.default = template;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dIHWY":[function(require,module,exports) {
-const _temp0 = require("./index.js");
-module.exports = {
-    "**": _temp0
-};
-
-},{"./index.js":"flBMt"}],"flBMt":[function(require,module,exports) {
+},{}],"dhKVG":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _500Tmpl = require("./500.tmpl");
@@ -697,7 +691,7 @@ exports.default = {
     template: (0, _500TmplDefault.default)
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./500.tmpl":"8TeZt"}],"8TeZt":[function(require,module,exports) {
+},{"./500.tmpl":"hgLGT","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hgLGT":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 const template = `
@@ -1026,7 +1020,7 @@ exports.default = {
     template: (0, _settingsTmplDefault.default)
 };
 
-},{"./settings.tmpl":"gNADH","../../modules/Page":"dpMFT","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./changeData/context":"jsliS","./changePassword/changePassword.tmpl":"kIbmp","./changePassword/context":"iCdwW"}],"gNADH":[function(require,module,exports) {
+},{"./settings.tmpl":"gNADH","../../modules/Page":"dpMFT","./changeData/context":"jsliS","./changePassword/changePassword.tmpl":"kIbmp","./changePassword/context":"iCdwW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gNADH":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _buttonPrimaryTmpl = require("../../components/buttons/buttonPrimary/buttonPrimary.tmpl");
@@ -1123,7 +1117,7 @@ const template = `
 `;
 exports.default = template;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../../../components/buttons/buttonPrimary/buttonPrimary.tmpl":"bvroS","../../../components/buttons/buttonSuccess/buttonSuccess.tmpl":"14u4p","../../../components/buttons/buttonWarning/buttonWarning.tmpl":"kdMrN"}],"iCdwW":[function(require,module,exports) {
+},{"../../../components/buttons/buttonPrimary/buttonPrimary.tmpl":"bvroS","../../../components/buttons/buttonSuccess/buttonSuccess.tmpl":"14u4p","../../../components/buttons/buttonWarning/buttonWarning.tmpl":"kdMrN","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"iCdwW":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 const editPasswordContext = {
@@ -1152,7 +1146,7 @@ function applyRenderParameters(template, context) {
     root.innerHTML = renderedTemplate;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./Templator":"beJ1N"}],"beJ1N":[function(require,module,exports) {
+},{"./Templator":"beJ1N","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"beJ1N":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _getJs = require("./get.js");
@@ -1189,7 +1183,7 @@ class Templator {
 }
 exports.default = Templator;
 
-},{"./get.js":"b3dMR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./emptyTemplatesChecker.js":"a0DLY","./loopThroughFields.js":"6pfZR"}],"b3dMR":[function(require,module,exports) {
+},{"./get.js":"b3dMR","./emptyTemplatesChecker.js":"a0DLY","./loopThroughFields.js":"6pfZR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"b3dMR":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "get", ()=>get);
