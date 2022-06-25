@@ -536,6 +536,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _stylesCss = require("./styles.css");
 var _router = require("./router/Router");
 var _routerDefault = parcelHelpers.interopDefault(_router);
+console.log("hey", "http://localhost:3001/");
 new (0, _routerDefault.default)("#app", [
     "login",
     "chat",
@@ -1032,7 +1033,7 @@ const template = `
 <div class="settings">
     <div class="settings-heading">
         <div class="avatar-rounded">
-            <img src="{{ image }}" alt="">
+            <img src="https://www.redditstatic.com/avatars/defaults/v2/avatar_default_7.png" alt="">
         </div>
         <h2 class="center-text">{{ nameHeading }}</h2>
     </div>
