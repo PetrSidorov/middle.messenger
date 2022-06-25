@@ -1000,6 +1000,7 @@ const context = {
     secondaryButtonName: "No account?",
     warningButtonName: "\u0418\u0437\u043C\u0435\u043D\u0438\u0442\u044C \u043F\u0430\u0440\u043E\u043B\u044C",
     successButtonName: "\u0412\u044B\u0439\u0442\u0438",
+    image: "../test/",
     primaryButtonClick: ()=>{
         const passingContext = clicked ? context : (0, _contextDefault.default);
         (0, _pageDefault.default).reRender(null, passingContext);
@@ -1031,7 +1032,7 @@ const template = `
 <div class="settings">
     <div class="settings-heading">
         <div class="avatar-rounded">
-            <img src="https://www.redditstatic.com/avatars/defaults/v2/avatar_default_7.png" alt="">
+            <img src="{{ image }}" alt="">
         </div>
         <h2 class="center-text">{{ nameHeading }}</h2>
     </div>

@@ -7,7 +7,7 @@ const template =  `
 <div class="settings">
     <div class="settings-heading">
         <div class="avatar-rounded">
-            <img src="https://www.redditstatic.com/avatars/defaults/v2/avatar_default_7.png" alt="">
+            <img src="{{ image }}" alt="">
         </div>
         <h2 class="center-text">{{ nameHeading }}</h2>
     </div>

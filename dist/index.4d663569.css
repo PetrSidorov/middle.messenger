@@ -161,6 +161,10 @@ div {
   box-sizing: border-box;
 }
 
+#root {
+  height: 100vh;
+}
+
 .center-text {
   text-align: center;
 }
@@ -381,8 +385,7 @@ div {
 }
 
 .history-panel {
-  height: 100%;
-  border: 1px solid gray;
+  background-color: #f8f8f8;
 }
 
 .chat-current {

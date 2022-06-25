@@ -28,8 +28,7 @@
 }
 
 .history-panel {
-    border: 1px solid grey;
-    height: 100%;
+    background-color: $chat-background-gray; 
 }
 
 .chat-current {
