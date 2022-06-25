@@ -733,7 +733,7 @@ const template = `
         </div>
         <div class="history-panel__chat">
             <div class="message">
-                <div class="message__avatar">
+                <div class="avatar-rounded">
                     <img src="https://via.placeholder.com/150" alt="">
                 </div>
                 <div class="message__body">
@@ -748,7 +748,7 @@ const template = `
                 </div>
             </div>
             <div class="message">
-                <div class="message__avatar">
+                <div class="avatar-rounded">
                     <img src="https://via.placeholder.com/150" alt="">
                 </div>
                 <div class="message__body">
@@ -764,25 +764,25 @@ const template = `
             </div>
         </div>
     </aside>
-    <main class="chat-main">
-        <div class="chat-toolbar">
-            <div class="info">
-                <div class="message__avatar">
+    <main class="chat-current">
+        <div class="chat-current__info-panel">
+            <div class="chat-current__info">
+                <div class="avatar-rounded">
                     <img src="https://via.placeholder.com/150" alt="">
                 </div>
                 <div>
                     <span>Вадим</span>
                 </div>
             </div>
-            <div class="manage-users">
+            <div class="chat-current__options">
                 ...
             </div>
         </div>
-        <div class="chat-body">
-            <div class="chat-body-date">
+        <div class="chat">
+            <div class="chat__date">
                 <span>19 июня</span>
             </div>
-            <div class="message message-left">
+            <div class="chat__message message-left">
                 <div>
                     <p>
                         Привет! Смотри, тут всплыл интересный кусок лунной космической истории — НАСА в какой-то
@@ -798,7 +798,7 @@ const template = `
                 </div>
                 <div class="message-time"> <span> 11:56</span></div>
             </div>
-            <div class="message message-right">
+            <div class="chat__message message-right">
                 <div>
                     <p> Супер!</p>
                 </div>
@@ -1030,7 +1030,7 @@ var _buttonWarningTmplDefault = parcelHelpers.interopDefault(_buttonWarningTmpl)
 const template = `
 <div class="settings">
     <div class="settings-heading">
-        <div class="message__avatar">
+        <div class="avatar-rounded">
             <img src="https://www.redditstatic.com/avatars/defaults/v2/avatar_default_7.png" alt="">
         </div>
         <h2 class="center-text">{{ nameHeading }}</h2>
@@ -1091,7 +1091,7 @@ var _buttonWarningTmplDefault = parcelHelpers.interopDefault(_buttonWarningTmpl)
 const template = `
 <div class="settings">
     <div class="settings-heading">
-        <div class="message__avatar">
+        <div class="avatar-rounded">
             <img src="https://www.redditstatic.com/avatars/defaults/v2/avatar_default_7.png" alt="">
         </div>
         <h2 class="center-text">{{ nameHeading }}</h2>

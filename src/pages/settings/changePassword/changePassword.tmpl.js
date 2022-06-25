@@ -6,7 +6,7 @@ import {default as buttonWarning} from '../../../components/buttons/buttonWarnin
 const template =  `
 <div class="settings">
     <div class="settings-heading">
-        <div class="message__avatar">
+        <div class="avatar-rounded">
             <img src="https://www.redditstatic.com/avatars/defaults/v2/avatar_default_7.png" alt="">
         </div>
         <h2 class="center-text">{{ nameHeading }}</h2>
