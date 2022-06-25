@@ -12,7 +12,7 @@ const context = {
     secondaryButtonName: 'No account?',
     warningButtonName: 'Изменить пароль',
     successButtonName: 'Выйти',
-    image: '../test/',
+    image: './img/avatar_default.png',
 
     primaryButtonClick: () => {
         const passingContext = clicked ? context : editDataContext;

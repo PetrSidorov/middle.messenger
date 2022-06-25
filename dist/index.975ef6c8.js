@@ -1000,7 +1000,7 @@ const context = {
     secondaryButtonName: "No account?",
     warningButtonName: "\u0418\u0437\u043C\u0435\u043D\u0438\u0442\u044C \u043F\u0430\u0440\u043E\u043B\u044C",
     successButtonName: "\u0412\u044B\u0439\u0442\u0438",
-    image: "../test/",
+    image: "./img/avatar_default.png",
     primaryButtonClick: ()=>{
         const passingContext = clicked ? context : (0, _contextDefault.default);
         (0, _pageDefault.default).reRender(null, passingContext);
