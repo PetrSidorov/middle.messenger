@@ -1,31 +1,33 @@
-// import Login from '../pages/login/index';
 import Page from '../modules/Page';
+import { currentRoute } from '../utils/currentRoute';
 export default class Router {
     constructor(root, routes) {
+        this.init()
         this.root = root;
         this.routes = routes;
-        this.init()
+       
     }
 
     init() {
         console.log('init')
-        const login = new Page
-        // this.routes.Login
-        login.render(root, 'login')
         window.addEventListener('hashchange', this.changeRoute)
         this.changeRoute()
+
     }
 
-    changeRoute(event){
-        const route = window.location.hash
-        // console.log(route)
+    changeRoute() {
+
+        let route = currentRoute()
+        if (route === '') {
+            route = 'login'
+        }
+
+        const page = new Page()
+        page.render(root, route)
+
     }
 
-    // get currentRoute(){
-    //     return window.location.hash
-    // }
-
-    destroy(){
+    destroy() {
         window.removeEventListener(this.changeRoute)
     }
 }

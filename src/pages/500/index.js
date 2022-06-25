@@ -1,4 +1,4 @@
-import template from './404.tmpl';
+import template from './500.tmpl';
 
 const context = {
 

@@ -1,6 +1,6 @@
 @import 'variables.css';
 
-.authorization-form {
+.entry-form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -81,6 +81,21 @@
 .button-primary {
     background-color: $color-primary;
     color: white;
+}
+
+.button-success {
+    background-color: $color-success;
+    color: white;
+}
+
+.button-danger {
+    background-color: $color-danger;
+    color: white;
+}
+
+.button-warning {
+    background-color: $color-warning;
+    color: black;
 }
 
 .button-link{

@@ -1,28 +1,34 @@
-import Templator from '../utils/Templator';
-import * as templates from '../pages/*/*.tmpl.js';
-
-
+import * as parameters from '../pages/*/index.js';
+import { currentRoute } from '../utils/currentRoute';
+import { applyRenderParameters } from '../utils/applyRenderParameters';
 export default class Page {
-    constructor(root, context, templ) {
+    constructor(root, route) {
         this.root = root;
-    }
-
-    getParameters(name) {
-
-        // const parametersPath = `../pages/${name}/${name}.tmpl`
-
-        // const parameters = import(parametersPath)
-        // return parameters
+        this.route = route;
     }
 
     render(root, name) {
-        const templ = templates[name][name].default.templ
-        const context = templates[name][name].default.context
-
-
-        const tmpl = new Templator(templ);
-        const renderedTemplate = tmpl.compile(context);
-        root.innerHTML = renderedTemplate;
+        const parameter = parameters[name].default
+        const template = parameter.template
+        const context = parameter.context
+        applyRenderParameters(template, context)
     }
+
+    static reRender(newTemplate, newContext) {
+        const name = currentRoute()
+        let context = Object.assign({}, parameters[name].default.context)
+        Object.keys(context).forEach(function (key) {
+            if (newContext[key] != null) {
+                context[key] = newContext[key];
+            }
+        })
+
+        let template = newTemplate || parameters[name].default.template
+        applyRenderParameters(template, context)
+
+    }
+
+
+
 
 }

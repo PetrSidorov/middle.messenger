@@ -1,17 +1,24 @@
-// import Page from '../../modules/Page'
+import template from './login.tmpl';
+const context = {
 
+    formHeading: 'Login',
+    primaryButtonName: 'Authorize',
+    secondaryButtonName: 'No account?',
+    inputs: {
+        login: {
+            placeholder: 'Login'
+        },
+        password: {
+            placeholder: 'Password'
+        }
+    },
+    primaryButtonClick: () => {
+        document.location.href = 'http://localhost:1234/#rchat'
+    },
+    secondaryButtonClick: () => {
+        console.log('hello')
+        document.location.href = 'http://localhost:1234/#registration'
+    }
+}
 
-// import {templ, context} from './login.tmpl'
-// export default class Login extends Page {
-//     constructor(param){
-//         super(param)
-//         this.templ = templ;
-//         this.context = context;
-
-//     }
-
-//     get parameters(){
-//         return {templ, context}
-//     }
-
-// }
+export default {context, template}

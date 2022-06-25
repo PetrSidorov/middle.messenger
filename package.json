@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "dev": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html",
+    "preinstall": "npx npm-force-resolutions"
   },
   "keywords": [],
   "author": "",
@@ -14,7 +15,6 @@
     "cssnano": "^5.1.12",
     "parcel": "^2.6.2",
     "postcss": "^8.4.14",
-    "postcss-font-magician": "^3.0.0",
     "postcss-import": "^14.1.0",
     "postcss-modules": "^4.3.1",
     "postcss-preset-env": "^7.7.1",

@@ -162,10 +162,10 @@ div {
 }
 
 .center-text {
-  margin: auto;
+  text-align: center;
 }
 
-.authorization-form {
+.entry-form {
   max-width: 500px;
   background: #fff;
   border-radius: 12px;
@@ -239,6 +239,21 @@ div {
 .button-primary {
   color: #fff;
   background-color: #3369f3;
+}
+
+.button-success {
+  color: #fff;
+  background-color: #28a745;
+}
+
+.button-danger {
+  color: #fff;
+  background-color: #dc3545;
+}
+
+.button-warning {
+  color: #000;
+  background-color: #ffc107;
 }
 
 .button-link {
@@ -435,6 +450,38 @@ div {
 .message-time {
   float: right;
   font-size: .8rem;
+}
+
+.settings {
+  max-width: 300px;
+  margin: auto;
+}
+
+.settings-heading {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+
+.settings-table span {
+  display: block;
+}
+
+.settings-table .table-row {
+  border-bottom: 1px solid #efefef;
+  justify-content: space-between;
+  display: flex;
+}
+
+.error-name {
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+}
+
+.back-link {
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=index.4d663569.css.map */

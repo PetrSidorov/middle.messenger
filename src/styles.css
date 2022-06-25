@@ -3,5 +3,7 @@
 @import 'css/base.css';
 @import 'css/variables.css';
 @import 'css/utils.css';
-@import 'css/authorization.css';
+@import 'css/login-form.css';
 @import 'css/chat/chat.css';
+@import 'css/settings.css';
+@import 'css/error-page.css';
