@@ -1,0 +1,25 @@
+
+.settings{
+    max-width: 300px;
+    margin: auto
+}
+
+
+.settings-heading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.settings-table{
+    & span {
+        display: block
+    }
+
+    & .table-row{
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid $color-gray;
+    }
+}

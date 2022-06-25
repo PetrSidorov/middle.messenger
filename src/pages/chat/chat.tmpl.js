@@ -1,40 +1,40 @@
 const template = `
     <div class="chat-wrapper">
-    <aside class="chat-aside">
-        <div class="search-toolbar">
-            <div class="profile-link">
+    <aside class="history-panel">
+        <div class="history-panel__toolbar">
+            <div class="history-panel__profile">
                 <span>Профиль</span>
             </div>
             <input class="search-input" type="text" placeholder="Поиск">
         </div>
-        <div class="chat-history">
-            <div class="chat-history-item">
-                <div class="image-container">
+        <div class="history-panel__chat">
+            <div class="message">
+                <div class="message__avatar">
                     <img src="https://via.placeholder.com/150" alt="">
                 </div>
-                <div class="text-container">
-                    <span class="chat-name">Андрей</span>
-                    <span class="chat-history-text">Изображение</span>
+                <div class="message__body">
+                    <span class="message__name">Андрей</span>
+                    <span class="message__preview">Изображение</span>
                 </div>
-                <div class="date-container">
-                    <div class="date">10:49</div>
-                    <div class="bage">
-                        <span class="bage-number">2</span>
+                <div class="message__info">
+                    <div class="message__date">10:49</div>
+                    <div class="message__bage">
+                        <span class="message__count">2</span>
                     </div>
                 </div>
             </div>
-            <div class="chat-history-item">
-                <div class="image-container">
+            <div class="message">
+                <div class="message__avatar">
                     <img src="https://via.placeholder.com/150" alt="">
                 </div>
-                <div class="text-container">
-                    <span class="chat-name">Андрей</span>
-                    <span class="chat-history-text">Изображение</span>
+                <div class="message__body">
+                    <span class="message__name">Андрей</span>
+                    <span class="message__preview">Изображение</span>
                 </div>
-                <div class="date-container">
-                    <div class="date">10:49</div>
-                    <div class="bage">
-                        <span class="bage-number">2</span>
+                <div class="message__info">
+                    <div class="message__date">10:49</div>
+                    <div class="message__bage">
+                        <span class="message__count">2</span>
                     </div>
                 </div>
             </div>
@@ -43,7 +43,7 @@ const template = `
     <main class="chat-main">
         <div class="chat-toolbar">
             <div class="info">
-                <div class="image-container">
+                <div class="message__avatar">
                     <img src="https://via.placeholder.com/150" alt="">
                 </div>
                 <div>

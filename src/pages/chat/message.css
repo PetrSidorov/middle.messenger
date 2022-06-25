@@ -1,6 +1,5 @@
-@import '../variables.css';
 
-.chat-history-item {
+.message {
     display: flex;
     justify-content: space-between;
     position: relative;
@@ -8,7 +7,7 @@
     width: 300px;
 }
 
-.chat-history-item::before {
+.message::before {
     content: "";
     position: absolute;
     left: 10px;
@@ -17,7 +16,7 @@
     border-bottom: 1px solid $lighter-gray;
 }
 
-.image-container {
+.message__avatar {
     width: 50px;
     height: 50px;
     position: relative;
@@ -32,35 +31,31 @@
     }
 }
 
-.text-container {
+.message__body {
     display: flex;
     flex-direction: column;
     margin-top: 10px;
 }
 
-.chat-name {
+.message__name {
     font-style: normal;
     font-weight: 600;
-    /* font-size: 13px;
-    line-height: 13px; */
     color: $dark-gray
 }
 
-.chat-history-text {
+.message__preview {
     color: $light-gray;
 }
 
-.date-container {
+.message__info {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: end;
-    /* align-items: right; */
+
 }
 
-.date {}
-
-.bage {
+.message__bage {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,14 +65,8 @@
     background-color: $color-primary;
     color: white;
     position: relative;
-    /* padding: 2px; */
 }
 
-.bage-number {
+.message__count {
     padding-top: 2px;
-    /* display: block; */
-    /* display: block; */
-    /* position: absolute;
-    top: 0;
-    left: 10px */
 }

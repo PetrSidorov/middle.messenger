@@ -13,7 +13,7 @@ const context = {
         }
     },
     primaryButtonClick: () => {
-        document.location.href = 'http://localhost:1234/#rchat'
+        document.location.href = 'http://localhost:1234/#chat'
     },
     secondaryButtonClick: () => {
         console.log('hello')

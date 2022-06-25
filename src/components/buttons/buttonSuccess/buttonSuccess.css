@@ -1,0 +1,4 @@
+.button-success {
+    background-color: $color-success;
+    color: white;
+}

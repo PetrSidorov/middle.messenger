@@ -1,0 +1,4 @@
+.button-danger {
+    background-color: $color-danger;
+    color: white;
+}

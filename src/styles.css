@@ -3,7 +3,14 @@
 @import 'css/base.css';
 @import 'css/variables.css';
 @import 'css/utils.css';
-@import 'css/login-form.css';
-@import 'css/chat/chat.css';
+@import 'css/entry-form.css';
+@import 'components/buttons/button.css';
+@import 'components/buttons/buttonPrimary/buttonPrimary.css';
+@import 'components/buttons/buttonDanger/buttonDanger.css';
+@import 'components/buttons/buttonSecondary/buttonSecondary.css';
+@import 'components/buttons/buttonSuccess/buttonSuccess.css';
+@import 'components/buttons/buttonWarning/buttonWarning.css';
+@import 'pages/settings/settings.css';
+@import 'pages/chat/chat.css';
 @import 'css/settings.css';
 @import 'css/error-page.css';

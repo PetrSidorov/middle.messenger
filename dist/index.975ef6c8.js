@@ -724,41 +724,41 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 const template = `
     <div class="chat-wrapper">
-    <aside class="chat-aside">
-        <div class="search-toolbar">
-            <div class="profile-link">
+    <aside class="history-panel">
+        <div class="history-panel__toolbar">
+            <div class="history-panel__profile">
                 <span>Профиль</span>
             </div>
             <input class="search-input" type="text" placeholder="Поиск">
         </div>
-        <div class="chat-history">
-            <div class="chat-history-item">
-                <div class="image-container">
+        <div class="history-panel__chat">
+            <div class="message">
+                <div class="message__avatar">
                     <img src="https://via.placeholder.com/150" alt="">
                 </div>
-                <div class="text-container">
-                    <span class="chat-name">Андрей</span>
-                    <span class="chat-history-text">Изображение</span>
+                <div class="message__body">
+                    <span class="message__name">Андрей</span>
+                    <span class="message__preview">Изображение</span>
                 </div>
-                <div class="date-container">
-                    <div class="date">10:49</div>
-                    <div class="bage">
-                        <span class="bage-number">2</span>
+                <div class="message__info">
+                    <div class="message__date">10:49</div>
+                    <div class="message__bage">
+                        <span class="message__count">2</span>
                     </div>
                 </div>
             </div>
-            <div class="chat-history-item">
-                <div class="image-container">
+            <div class="message">
+                <div class="message__avatar">
                     <img src="https://via.placeholder.com/150" alt="">
                 </div>
-                <div class="text-container">
-                    <span class="chat-name">Андрей</span>
-                    <span class="chat-history-text">Изображение</span>
+                <div class="message__body">
+                    <span class="message__name">Андрей</span>
+                    <span class="message__preview">Изображение</span>
                 </div>
-                <div class="date-container">
-                    <div class="date">10:49</div>
-                    <div class="bage">
-                        <span class="bage-number">2</span>
+                <div class="message__info">
+                    <div class="message__date">10:49</div>
+                    <div class="message__bage">
+                        <span class="message__count">2</span>
                     </div>
                 </div>
             </div>
@@ -767,7 +767,7 @@ const template = `
     <main class="chat-main">
         <div class="chat-toolbar">
             <div class="info">
-                <div class="image-container">
+                <div class="message__avatar">
                     <img src="https://via.placeholder.com/150" alt="">
                 </div>
                 <div>
@@ -833,7 +833,7 @@ const context = {
         }
     },
     primaryButtonClick: ()=>{
-        document.location.href = "http://localhost:1234/#rchat";
+        document.location.href = "http://localhost:1234/#chat";
     },
     secondaryButtonClick: ()=>{
         console.log("hello");
@@ -854,19 +854,17 @@ var _buttonSecondaryTmpl = require("../../components/buttons/buttonSecondary/but
 var _buttonSecondaryTmplDefault = parcelHelpers.interopDefault(_buttonSecondaryTmpl);
 const template = `
 <form class="entry-form">
-<h2 class="center-text">{{ formHeading }}</h2>
-<div class="input-section">
-
-    <div class="form-field">
-        <input required pattern="\S+.*" id="username" class="form-text-input" type="text">
-        <label class="input-label" for="username">{{ inputs.login.placeholder }}</label>
+    <h2 class="center-text">{{ formHeading }}</h2>
+    <div class="entry-form__inputs">
+        <div class="input-container">
+            <input required pattern="\S+.*" id="username" class="text-input" type="text">
+            <label class="input-label" for="username">{{ inputs.login.placeholder }}</label>
+        </div>
+        <div class="input-container">
+            <input required pattern="\S+.*" id="password" class="text-input" type="text">
+            <label class="input-label" for="password">{{ inputs.password.placeholder }}</label>
+        </div>
     </div>
-    <div class="form-field">
-        <input required pattern="\S+.*" id="password" class="form-text-input" type="text">
-        <label class="input-label" for="password">{{ inputs.password.placeholder }}</label>
-    </div>
-  
-</div>
 
 <div class="action-buttons">
     ${(0, _buttonPrimaryTmplDefault.default)}
@@ -943,34 +941,34 @@ var _buttonPrimaryTmplDefault = parcelHelpers.interopDefault(_buttonPrimaryTmpl)
 const template = `
 <form class="entry-form">
 <h2 class="center-text">{{ formHeading }}</h2>
-<div class="input-section">
+<div class="entry-form__inputs">
 
-    <div class="form-field">
-        <input required pattern="\S+.*" id="username" class="form-text-input" type="text">
+    <div class="input-container">
+        <input required pattern="\S+.*" id="username" class="text-input" type="text">
         <label class="input-label" for="username">{{ inputs.email.placeholder }}</label>
     </div>
-    <div class="form-field">
-        <input required pattern="\S+.*" id="password" class="form-text-input" type="text">
+    <div class="input-container">
+        <input required pattern="\S+.*" id="password" class="text-input" type="text">
         <label class="input-label" for="password">{{ inputs.login.placeholder }}</label>
     </div>
-    <div class="form-field">
-        <input required pattern="\S+.*" id="password" class="form-text-input" type="text">
+    <div class="input-container">
+        <input required pattern="\S+.*" id="password" class="text-input" type="text">
         <label class="input-label" for="password">{{ inputs.name.placeholder }}</label>
     </div>
-    <div class="form-field">
-        <input required pattern="\S+.*" id="password" class="form-text-input" type="text">
+    <div class="input-container">
+        <input required pattern="\S+.*" id="password" class="text-input" type="text">
         <label class="input-label" for="password">{{ inputs.surname.placeholder }}</label>
     </div>
-    <div class="form-field">
-        <input required pattern="\S+.*" id="password" class="form-text-input" type="text">
+    <div class="input-container">
+        <input required pattern="\S+.*" id="password" class="text-input" type="text">
         <label class="input-label" for="password">{{ inputs.tel.placeholder }}</label>
     </div>
-    <div class="form-field">
-        <input required pattern="\S+.*" id="password" class="form-text-input" type="text">
+    <div class="input-container">
+        <input required pattern="\S+.*" id="password" class="text-input" type="text">
         <label class="input-label" for="password">{{ inputs.password.placeholder }}</label>
     </div>
-    <div class="form-field">
-        <input required pattern="\S+.*" id="password" class="form-text-input" type="text">
+    <div class="input-container">
+        <input required pattern="\S+.*" id="password" class="text-input" type="text">
         <label class="input-label" for="password">{{ inputs.confirmPassword.placeholder }}</label>
     </div> 
 </div>
@@ -1032,7 +1030,7 @@ var _buttonWarningTmplDefault = parcelHelpers.interopDefault(_buttonWarningTmpl)
 const template = `
 <div class="settings">
     <div class="settings-heading">
-        <div class="image-container">
+        <div class="message__avatar">
             <img src="https://www.redditstatic.com/avatars/defaults/v2/avatar_default_7.png" alt="">
         </div>
         <h2 class="center-text">{{ nameHeading }}</h2>
@@ -1093,7 +1091,7 @@ var _buttonWarningTmplDefault = parcelHelpers.interopDefault(_buttonWarningTmpl)
 const template = `
 <div class="settings">
     <div class="settings-heading">
-        <div class="image-container">
+        <div class="message__avatar">
             <img src="https://www.redditstatic.com/avatars/defaults/v2/avatar_default_7.png" alt="">
         </div>
         <h2 class="center-text">{{ nameHeading }}</h2>
