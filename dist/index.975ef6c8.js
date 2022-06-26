@@ -536,7 +536,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _stylesCss = require("./styles.css");
 var _router = require("./router/Router");
 var _routerDefault = parcelHelpers.interopDefault(_router);
-console.log("hey", "http://localhost:3001/");
+console.log("hey", undefined);
 new (0, _routerDefault.default)("#app", [
     "login",
     "chat",
@@ -603,23 +603,23 @@ class Page {
 }
 exports.default = Page;
 
-},{"../pages/*/index.js":"fgbCN","../utils/currentRoute":"kfGDM","../utils/applyRenderParameters":"a1T8V","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fgbCN":[function(require,module,exports) {
+},{"../pages/*/index.js":"doZk9","../utils/currentRoute":"kfGDM","../utils/applyRenderParameters":"a1T8V","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"doZk9":[function(require,module,exports) {
 const _temp0 = require("../404/index.js");
 const _temp1 = require("../500/index.js");
-const _temp2 = require("../chat/index.js");
-const _temp3 = require("../login/index.js");
+const _temp2 = require("../login/index.js");
+const _temp3 = require("../chat/index.js");
 const _temp4 = require("../registration/index.js");
 const _temp5 = require("../settings/index.js");
 module.exports = {
     "404": _temp0,
     "500": _temp1,
-    "chat": _temp2,
-    "login": _temp3,
+    "login": _temp2,
+    "chat": _temp3,
     "registration": _temp4,
     "settings": _temp5
 };
 
-},{"../404/index.js":"3mX9L","../500/index.js":"dhKVG","../chat/index.js":"6IeT6","../login/index.js":"5dBIA","../registration/index.js":"fSkHX","../settings/index.js":"gSXyr"}],"3mX9L":[function(require,module,exports) {
+},{"../404/index.js":"3mX9L","../500/index.js":"dhKVG","../login/index.js":"5dBIA","../chat/index.js":"6IeT6","../registration/index.js":"fSkHX","../settings/index.js":"gSXyr"}],"3mX9L":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _404Tmpl = require("./404.tmpl");
@@ -702,6 +702,82 @@ const template = `
     <a class="center-text back-link" href="/">Вернуться к чатам</a>
 </div>
 </div>
+`;
+exports.default = template;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5dBIA":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _loginTmpl = require("./login.tmpl");
+var _loginTmplDefault = parcelHelpers.interopDefault(_loginTmpl);
+const context = {
+    formHeading: "Login",
+    primaryButtonName: "Authorize",
+    secondaryButtonName: "No account?",
+    inputs: {
+        login: {
+            placeholder: "Login"
+        },
+        password: {
+            placeholder: "Password"
+        }
+    },
+    primaryButtonClick: ()=>{
+        document.location.href = "http://localhost:1234/#chat";
+    },
+    secondaryButtonClick: ()=>{
+        console.log("hello");
+        document.location.href = "http://localhost:1234/#registration";
+    }
+};
+exports.default = {
+    context,
+    template: (0, _loginTmplDefault.default)
+};
+
+},{"./login.tmpl":"iBNh1","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"iBNh1":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _buttonPrimaryTmpl = require("../../components/buttons/buttonPrimary/buttonPrimary.tmpl");
+var _buttonPrimaryTmplDefault = parcelHelpers.interopDefault(_buttonPrimaryTmpl);
+var _buttonSecondaryTmpl = require("../../components/buttons/buttonSecondary/buttonSecondary.tmpl");
+var _buttonSecondaryTmplDefault = parcelHelpers.interopDefault(_buttonSecondaryTmpl);
+const template = `
+<form class="entry-form">
+    <h2 class="center-text">{{ formHeading }}</h2>
+    <div class="entry-form__inputs">
+        <div class="input-container">
+            <input required pattern="\S+.*" id="username" class="text-input" type="text">
+            <label class="input-label" for="username">{{ inputs.login.placeholder }}</label>
+        </div>
+        <div class="input-container">
+            <input required pattern="\S+.*" id="password" class="text-input" type="text">
+            <label class="input-label" for="password">{{ inputs.password.placeholder }}</label>
+        </div>
+    </div>
+
+<div class="action-buttons">
+    ${(0, _buttonPrimaryTmplDefault.default)}
+    ${(0, _buttonSecondaryTmplDefault.default)}
+</div>
+</form>
+`;
+exports.default = template;
+
+},{"../../components/buttons/buttonPrimary/buttonPrimary.tmpl":"bvroS","../../components/buttons/buttonSecondary/buttonSecondary.tmpl":"81ceB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bvroS":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+const template = `
+<button onclick="{{ primaryButtonClick }}" type="submit" 
+class="button button-primary">{{ primaryButtonName }}</button>
+`;
+exports.default = template;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"81ceB":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+const template = `
+<button onclick="{{ secondaryButtonClick }}" class="button button-link">{{ secondaryButtonName }}</button>
 `;
 exports.default = template;
 
@@ -813,82 +889,6 @@ const template = `
         </div>
     </main>
 </div>
-`;
-exports.default = template;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5dBIA":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _loginTmpl = require("./login.tmpl");
-var _loginTmplDefault = parcelHelpers.interopDefault(_loginTmpl);
-const context = {
-    formHeading: "Login",
-    primaryButtonName: "Authorize",
-    secondaryButtonName: "No account?",
-    inputs: {
-        login: {
-            placeholder: "Login"
-        },
-        password: {
-            placeholder: "Password"
-        }
-    },
-    primaryButtonClick: ()=>{
-        document.location.href = "http://localhost:1234/#chat";
-    },
-    secondaryButtonClick: ()=>{
-        console.log("hello");
-        document.location.href = "http://localhost:1234/#registration";
-    }
-};
-exports.default = {
-    context,
-    template: (0, _loginTmplDefault.default)
-};
-
-},{"./login.tmpl":"iBNh1","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"iBNh1":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _buttonPrimaryTmpl = require("../../components/buttons/buttonPrimary/buttonPrimary.tmpl");
-var _buttonPrimaryTmplDefault = parcelHelpers.interopDefault(_buttonPrimaryTmpl);
-var _buttonSecondaryTmpl = require("../../components/buttons/buttonSecondary/buttonSecondary.tmpl");
-var _buttonSecondaryTmplDefault = parcelHelpers.interopDefault(_buttonSecondaryTmpl);
-const template = `
-<form class="entry-form">
-    <h2 class="center-text">{{ formHeading }}</h2>
-    <div class="entry-form__inputs">
-        <div class="input-container">
-            <input required pattern="\S+.*" id="username" class="text-input" type="text">
-            <label class="input-label" for="username">{{ inputs.login.placeholder }}</label>
-        </div>
-        <div class="input-container">
-            <input required pattern="\S+.*" id="password" class="text-input" type="text">
-            <label class="input-label" for="password">{{ inputs.password.placeholder }}</label>
-        </div>
-    </div>
-
-<div class="action-buttons">
-    ${(0, _buttonPrimaryTmplDefault.default)}
-    ${(0, _buttonSecondaryTmplDefault.default)}
-</div>
-</form>
-`;
-exports.default = template;
-
-},{"../../components/buttons/buttonPrimary/buttonPrimary.tmpl":"bvroS","../../components/buttons/buttonSecondary/buttonSecondary.tmpl":"81ceB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bvroS":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-const template = `
-<button onclick="{{ primaryButtonClick }}" type="submit" 
-class="button button-primary">{{ primaryButtonName }}</button>
-`;
-exports.default = template;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"81ceB":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-const template = `
-<button onclick="{{ secondaryButtonClick }}" class="button button-link">{{ secondaryButtonName }}</button>
 `;
 exports.default = template;
 
