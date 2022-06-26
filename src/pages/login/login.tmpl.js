@@ -6,12 +6,12 @@ const template =  `
     <h2 class="center-text">{{ formHeading }}</h2>
     <div class="entry-form__inputs">
         <div class="input-container">
-            <input required pattern="\S+.*" id="username" class="text-input" type="text">
-            <label class="input-label" for="username">{{ inputs.login.placeholder }}</label>
+            <input required value="{{ login }}" id="username" class="text-input" type="text">
+            <label class="input-label" for="username">{{ login_label }}</label>
         </div>
         <div class="input-container">
-            <input required pattern="\S+.*" id="password" class="text-input" type="text">
-            <label class="input-label" for="password">{{ inputs.password.placeholder }}</label>
+            <input required value="{{ password }}" id="password" class="text-input" type="text">
+            <label class="input-label" for="password">{{ password_label }}</label>
         </div>
     </div>
 

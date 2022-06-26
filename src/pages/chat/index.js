@@ -1,8 +1,8 @@
 import template from './chat.tmpl';
 
 const context = {
-
-
+    message: 'Hello!',
+    
     handleClick: () => {
         console.log('hello')
     }

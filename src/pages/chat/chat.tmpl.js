@@ -83,7 +83,7 @@ const template = `
         </div>
         <div class="message-toolbar">
             <button class="clip-button">^</button>
-            <input placeholder="Сообщение" class="message-input" type="text">
+            <input placeholder="Message" value="{{ message }}" class="message-input" type="text">
             <button class="send-message-button">-></button>
         </div>
     </main>

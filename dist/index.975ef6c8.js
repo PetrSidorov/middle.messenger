@@ -536,7 +536,6 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _stylesCss = require("./styles.css");
 var _router = require("./router/Router");
 var _routerDefault = parcelHelpers.interopDefault(_router);
-console.log("hey", "3001");
 new (0, _routerDefault.default)("#app", [
     "login",
     "chat",
@@ -711,6 +710,7 @@ parcelHelpers.defineInteropFlag(exports);
 var _chatTmpl = require("./chat.tmpl");
 var _chatTmplDefault = parcelHelpers.interopDefault(_chatTmpl);
 const context = {
+    message: "Hello!",
     handleClick: ()=>{
         console.log("hello");
     }
@@ -808,7 +808,7 @@ const template = `
         </div>
         <div class="message-toolbar">
             <button class="clip-button">^</button>
-            <input placeholder="Сообщение" class="message-input" type="text">
+            <input placeholder="Message" value="{{ message }}" class="message-input" type="text">
             <button class="send-message-button">-></button>
         </div>
     </main>
@@ -823,22 +823,18 @@ var _loginTmpl = require("./login.tmpl");
 var _loginTmplDefault = parcelHelpers.interopDefault(_loginTmpl);
 const context = {
     formHeading: "Login",
-    primaryButtonName: "Authorize",
-    secondaryButtonName: "No account?",
-    inputs: {
-        login: {
-            placeholder: "Login"
-        },
-        password: {
-            placeholder: "Password"
-        }
-    },
+    primaryButtonName: "Sign in",
+    secondaryButtonName: "Create account",
+    login: "Login",
+    login_label: "Login",
+    password: "****",
+    password_label: "Password",
     primaryButtonClick: ()=>{
-        document.location.href = "http://localhost:1234/#chat";
+        document.location.href = "#chat";
     },
     secondaryButtonClick: ()=>{
         console.log("hello");
-        document.location.href = "http://localhost:1234/#registration";
+        document.location.href = "#registration";
     }
 };
 exports.default = {
@@ -858,12 +854,12 @@ const template = `
     <h2 class="center-text">{{ formHeading }}</h2>
     <div class="entry-form__inputs">
         <div class="input-container">
-            <input required pattern="\S+.*" id="username" class="text-input" type="text">
-            <label class="input-label" for="username">{{ inputs.login.placeholder }}</label>
+            <input required value="{{ login }}" id="username" class="text-input" type="text">
+            <label class="input-label" for="username">{{ login_label }}</label>
         </div>
         <div class="input-container">
-            <input required pattern="\S+.*" id="password" class="text-input" type="text">
-            <label class="input-label" for="password">{{ inputs.password.placeholder }}</label>
+            <input required value="{{ password }}" id="password" class="text-input" type="text">
+            <label class="input-label" for="password">{{ password_label }}</label>
         </div>
     </div>
 
@@ -899,34 +895,24 @@ var _registrationTmpl = require("./registration.tmpl");
 var _registrationTmplDefault = parcelHelpers.interopDefault(_registrationTmpl);
 const context = {
     formHeading: "Registration",
-    primaryButtonName: "Register",
-    secondaryButtonName: "No account?",
-    inputs: {
-        email: {
-            placeholder: "Email@yandex.ru"
-        },
-        login: {
-            placeholder: "Login"
-        },
-        name: {
-            placeholder: "Ivan"
-        },
-        surname: {
-            placeholder: "Ivanov"
-        },
-        tel: {
-            placeholder: "+7 (909) 888 88 88"
-        },
-        password: {
-            placeholder: "Password"
-        },
-        confirmPassword: {
-            placeholder: "Repeat password, please"
-        }
-    },
+    primaryButtonName: "Sign up",
+    email_label: "Email@yandex.ru",
+    email: "test@yandex.ru",
+    login_label: "Login",
+    login: "Login",
+    first_name_label: "Ivan",
+    first_name: "Ivan",
+    second_name_label: "Ivanov",
+    second_name: "Ivanov",
+    phone_label: "+7 (909) 888 88 88",
+    phone: "+7 (909) 888 88 88",
+    password_label: "Password",
+    password: "*****",
+    confirmPassword: "*****",
+    confirmPassword_label: "Repeat password, please",
     primaryButtonClick: ()=>{
         console.log("hello");
-        document.location.href = "http://localhost:1234/#chat";
+        document.location.href = "#chat";
     }
 };
 exports.default = {
@@ -945,32 +931,32 @@ const template = `
 <div class="entry-form__inputs">
 
     <div class="input-container">
-        <input required pattern="\S+.*" id="username" class="text-input" type="text">
-        <label class="input-label" for="username">{{ inputs.email.placeholder }}</label>
+        <input required id="username" value="{{ email }}" class="text-input" type="text">
+        <label class="input-label" for="username">{{ email_label }}</label>
     </div>
     <div class="input-container">
-        <input required pattern="\S+.*" id="password" class="text-input" type="text">
-        <label class="input-label" for="password">{{ inputs.login.placeholder }}</label>
+        <input required  id="password" value="{{ login }}" class="text-input" type="text">
+        <label class="input-label" for="password">{{ login_label }}</label>
     </div>
     <div class="input-container">
-        <input required pattern="\S+.*" id="password" class="text-input" type="text">
-        <label class="input-label" for="password">{{ inputs.name.placeholder }}</label>
+        <input required  id="password" value="{{ first_name }}" class="text-input" type="text">
+        <label class="input-label" for="password">{{ first_name_label }}</label>
     </div>
     <div class="input-container">
-        <input required pattern="\S+.*" id="password" class="text-input" type="text">
-        <label class="input-label" for="password">{{ inputs.surname.placeholder }}</label>
+        <input required  id="password" value="{{ second_name }}" class="text-input" type="text">
+        <label class="input-label" for="password">{{ second_name_label }}</label>
     </div>
     <div class="input-container">
-        <input required pattern="\S+.*" id="password" class="text-input" type="text">
-        <label class="input-label" for="password">{{ inputs.tel.placeholder }}</label>
+        <input required  id="password" value="{{ phone }}" class="text-input" type="text">
+        <label class="input-label" for="password">{{ phone_label }}</label>
     </div>
     <div class="input-container">
-        <input required pattern="\S+.*" id="password" class="text-input" type="text">
-        <label class="input-label" for="password">{{ inputs.password.placeholder }}</label>
+        <input required  id="password" value="{{ password }}" class="text-input" type="text">
+        <label class="input-label" for="password">{{ password_label }}</label>
     </div>
     <div class="input-container">
-        <input required pattern="\S+.*" id="password" class="text-input" type="text">
-        <label class="input-label" for="password">{{ inputs.confirmPassword.placeholder }}</label>
+        <input required  id="password" value="{{ confirmPassword }}" class="text-input" type="text">
+        <label class="input-label" for="password">{{ confirmPassword_label }}</label>
     </div> 
 </div>
 
@@ -994,17 +980,32 @@ var _changePasswordTmpl = require("./changePassword/changePassword.tmpl");
 var _changePasswordTmplDefault = parcelHelpers.interopDefault(_changePasswordTmpl);
 var _context1 = require("./changePassword/context");
 var _contextDefault1 = parcelHelpers.interopDefault(_context1);
+var _changeDataTmpl = require("./changeData/changeData.tmpl");
+var _changeDataTmplDefault = parcelHelpers.interopDefault(_changeDataTmpl);
 let clicked = false;
 const context = {
+    email_label: "Email@yandex.ru",
+    email: "test@yandex.ru",
+    login_label: "Login",
+    login: "Login",
+    first_name_label: "Ivan",
+    first_name: "Ivan",
+    second_name_label: "Ivanov",
+    second_name: "Ivanov",
+    nickname: "Ivanich",
+    nickname_login: "Nickname",
+    phone_label: "Phone",
+    phone: "+7 (909) 888 88 88",
+    password_label: "Password",
     nameHeading: "Ivan",
     primaryButtonName: "\u0418\u0437\u043C\u0435\u043D\u0438\u0442\u044C \u0434\u0430\u043D\u043D\u044B\u0435",
     secondaryButtonName: "No account?",
     warningButtonName: "\u0418\u0437\u043C\u0435\u043D\u0438\u0442\u044C \u043F\u0430\u0440\u043E\u043B\u044C",
     successButtonName: "\u0412\u044B\u0439\u0442\u0438",
-    image: "./img/avatar_default.png",
+    avatar: "https://www.redditstatic.com/avatars/defaults/v2/avatar_default_7.png",
     primaryButtonClick: ()=>{
         const passingContext = clicked ? context : (0, _contextDefault.default);
-        (0, _pageDefault.default).reRender(null, passingContext);
+        (0, _pageDefault.default).reRender((0, _changeDataTmplDefault.default), passingContext);
         let editableSpans = document.querySelectorAll("[data-editable]");
         editableSpans.forEach((element)=>{
             element.setAttribute("contenteditable", !clicked);
@@ -1020,7 +1021,7 @@ exports.default = {
     template: (0, _settingsTmplDefault.default)
 };
 
-},{"./settings.tmpl":"gNADH","../../modules/Page":"dpMFT","./changeData/context":"jsliS","./changePassword/changePassword.tmpl":"kIbmp","./changePassword/context":"iCdwW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gNADH":[function(require,module,exports) {
+},{"./settings.tmpl":"gNADH","../../modules/Page":"dpMFT","./changeData/context":"jsliS","./changePassword/changePassword.tmpl":"kIbmp","./changePassword/context":"iCdwW","./changeData/changeData.tmpl":"7pZe5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gNADH":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _buttonPrimaryTmpl = require("../../components/buttons/buttonPrimary/buttonPrimary.tmpl");
@@ -1033,19 +1034,39 @@ const template = `
 <div class="settings">
     <div class="settings-heading">
         <div class="avatar-rounded">
-            <img src="https://www.redditstatic.com/avatars/defaults/v2/avatar_default_7.png" alt="">
+            <img src="{{ avatar }}" alt="">
         </div>
         <h2 class="center-text">{{ nameHeading }}</h2>
     </div>
     <div class="settings-table">
         <div class="table-row">
-            <span class="setting-name">Почта</span>
-            <span data-editable class="setting-value">mail@iandex.ru</span>
+            <span class="setting-name">{{ email_label }}</span>
+            <span data-editable class="setting-value">{{ email }}</span>
         </div>
         <div class="table-row">
-        <span class="setting-name">Почта</span>
-        <span data-editable class="setting-value">mail@iandex.ru</span>
-    </div>
+            <span class="setting-name">{{ login_label }}</span>
+            <span data-editable class="setting-value">{{ login }}</span>
+        </div>
+        <div class="table-row">
+            <span class="setting-name">{{ first_name_label }}</span>
+            <span data-editable class="setting-value">{{ first_name }}</span>
+        </div>
+        <div class="table-row">
+            <span class="setting-name">{{ second_name_label }}</span>
+            <span data-editable class="setting-value">{{ second_name }}</span>
+        </div>
+        <div class="table-row">
+            <span class="setting-name">{{ nickname_label }}</span>
+            <span data-editable class="setting-value">{{ nickname }}</span>
+        </div>
+        <div class="table-row">
+            <span class="setting-name">{{ phone_label }}</span>
+            <span data-editable class="setting-value">{{ phone }}</span>
+        </div>
+        <div>
+            <label for="file">Choose avatar to upload</label>
+            <input type="file" id="file" name="file">
+        </div>
     </div>
     <div class="action-buttons">
     ${(0, _buttonPrimaryTmplDefault.default)}
@@ -1126,7 +1147,64 @@ const editPasswordContext = {
 };
 exports.default = editPasswordContext;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kfGDM":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7pZe5":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _buttonPrimaryTmpl = require("../../../components/buttons/buttonPrimary/buttonPrimary.tmpl");
+var _buttonPrimaryTmplDefault = parcelHelpers.interopDefault(_buttonPrimaryTmpl);
+var _buttonSuccessTmpl = require("../../../components/buttons/buttonSuccess/buttonSuccess.tmpl");
+var _buttonSuccessTmplDefault = parcelHelpers.interopDefault(_buttonSuccessTmpl);
+var _buttonWarningTmpl = require("../../../components/buttons/buttonWarning/buttonWarning.tmpl");
+var _buttonWarningTmplDefault = parcelHelpers.interopDefault(_buttonWarningTmpl);
+const template = `
+<div class="settings">
+    <div class="settings-heading">
+        <div class="avatar-rounded">
+            <img src="{{ avatar }}" alt="">
+        </div>
+        <h2 class="center-text">{{ nameHeading }}</h2>
+    </div>
+    <div class="settings-table">
+        <div class="table-row">
+            <span class="setting-name">{{ email_label }}</span>
+            <span data-editable class="setting-value">{{ email }}</span>
+        </div>
+        <div class="table-row">
+            <span class="setting-name">{{ login_label }}</span>
+            <span data-editable class="setting-value">{{ login }}</span>
+        </div>
+        <div class="table-row">
+            <span class="setting-name">{{ first_name_label }}</span>
+            <span data-editable class="setting-value">{{ first_name }}</span>
+        </div>
+        <div class="table-row">
+            <span class="setting-name">{{ second_name_label }}</span>
+            <span data-editable class="setting-value">{{ second_name }}</span>
+        </div>
+        <div class="table-row">
+            <span class="setting-name">{{ nickname_label }}</span>
+            <span data-editable class="setting-value">{{ nickname }}</span>
+        </div>
+        <div class="table-row">
+            <span class="setting-name">{{ phone_label }}</span>
+            <span data-editable class="setting-value">{{ phone }}</span>
+        </div>
+        <div>
+            <label for="file">Choose avatar to upload</label>
+            <input type="file" id="file" name="file">
+        </div>
+    </div>
+    <div class="action-buttons">
+    ${(0, _buttonPrimaryTmplDefault.default)}
+    ${(0, _buttonWarningTmplDefault.default)}
+    ${(0, _buttonSuccessTmplDefault.default)}
+    </div>
+
+</div>
+`;
+exports.default = template;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../../../components/buttons/buttonPrimary/buttonPrimary.tmpl":"bvroS","../../../components/buttons/buttonSuccess/buttonSuccess.tmpl":"14u4p","../../../components/buttons/buttonWarning/buttonWarning.tmpl":"kdMrN"}],"kfGDM":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "currentRoute", ()=>currentRoute);

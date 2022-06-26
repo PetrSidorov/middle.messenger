@@ -8,32 +8,32 @@ const template = `
 <div class="entry-form__inputs">
 
     <div class="input-container">
-        <input required pattern="\S+.*" id="username" class="text-input" type="text">
-        <label class="input-label" for="username">{{ inputs.email.placeholder }}</label>
+        <input required id="username" value="{{ email }}" class="text-input" type="text">
+        <label class="input-label" for="username">{{ email_label }}</label>
     </div>
     <div class="input-container">
-        <input required pattern="\S+.*" id="password" class="text-input" type="text">
-        <label class="input-label" for="password">{{ inputs.login.placeholder }}</label>
+        <input required  id="password" value="{{ login }}" class="text-input" type="text">
+        <label class="input-label" for="password">{{ login_label }}</label>
     </div>
     <div class="input-container">
-        <input required pattern="\S+.*" id="password" class="text-input" type="text">
-        <label class="input-label" for="password">{{ inputs.name.placeholder }}</label>
+        <input required  id="password" value="{{ first_name }}" class="text-input" type="text">
+        <label class="input-label" for="password">{{ first_name_label }}</label>
     </div>
     <div class="input-container">
-        <input required pattern="\S+.*" id="password" class="text-input" type="text">
-        <label class="input-label" for="password">{{ inputs.surname.placeholder }}</label>
+        <input required  id="password" value="{{ second_name }}" class="text-input" type="text">
+        <label class="input-label" for="password">{{ second_name_label }}</label>
     </div>
     <div class="input-container">
-        <input required pattern="\S+.*" id="password" class="text-input" type="text">
-        <label class="input-label" for="password">{{ inputs.tel.placeholder }}</label>
+        <input required  id="password" value="{{ phone }}" class="text-input" type="text">
+        <label class="input-label" for="password">{{ phone_label }}</label>
     </div>
     <div class="input-container">
-        <input required pattern="\S+.*" id="password" class="text-input" type="text">
-        <label class="input-label" for="password">{{ inputs.password.placeholder }}</label>
+        <input required  id="password" value="{{ password }}" class="text-input" type="text">
+        <label class="input-label" for="password">{{ password_label }}</label>
     </div>
     <div class="input-container">
-        <input required pattern="\S+.*" id="password" class="text-input" type="text">
-        <label class="input-label" for="password">{{ inputs.confirmPassword.placeholder }}</label>
+        <input required  id="password" value="{{ confirmPassword }}" class="text-input" type="text">
+        <label class="input-label" for="password">{{ confirmPassword_label }}</label>
     </div> 
 </div>
 
