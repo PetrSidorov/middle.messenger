@@ -1,4 +1,6 @@
 # О проекте
+К сожалению, я запутался с ветками в git и main создавался из orphan ветки. Надеюсь на понимание.
+
 Веб приложение чат
 Ссылка на макеты (яндекс): 
 https://www.figma.com/file/jF5fFFzgGOxQeB4CmKWTiE/Chat_external_link?node-id=0%3A1
