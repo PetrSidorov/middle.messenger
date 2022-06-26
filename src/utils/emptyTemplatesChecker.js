@@ -1,3 +1,3 @@
-export function emptyTemplatesChecker(keyName){
-    console.warn(`Please, provide ${keyName} parameter`)
+export function emptyTemplatesChecker(keyName) {
+  console.warn(`Please, provide ${keyName} parameter`);
 }

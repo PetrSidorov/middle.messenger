@@ -5,5 +5,5 @@ const template = `
     <a class="center-text back-link" href="/">Вернуться к чатам</a>
 </div>
 </div>
-`
-export default template
+`;
+export default template;

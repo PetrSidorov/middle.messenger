@@ -1,6 +1,6 @@
 const editPasswordContext = {
-    primaryButtonName: 'Сохранить',
-    successButtonName: 'Выйти',
-}
+  primaryButtonName: 'Сохранить',
+  successButtonName: 'Выйти',
+};
 
-export default editPasswordContext
+export default editPasswordContext;

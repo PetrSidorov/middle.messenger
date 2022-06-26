@@ -4,10 +4,10 @@ import {
 import {
     emptyTemplatesChecker
 } from './emptyTemplatesChecker.js';
-import { loopThroughFields } from './loopThroughFields.js';
+
 
 export default class Templator {
-    TEMPLATE_REGEXP = /\{\{(.*?)\}\}/gi;
+   TEMPLATE_REGEXP = /\{\{(.*?)\}\}/gi;
 
     constructor(template) {
         this._template = template;
@@ -33,9 +33,7 @@ export default class Templator {
                 }
 
                 if (typeof data === "function") {
-                    // console.log(data)
                     window[tmplValue] = data;
-                    // console.log(window[tmplValue])
                     tmpl = tmpl.replace(
                         new RegExp(key[0], "gi"),
                         `window.${key[1].trim()}()`

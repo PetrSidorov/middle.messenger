@@ -88,5 +88,5 @@ const template = `
         </div>
     </main>
 </div>
-`
-export default template
+`;
+export default template;

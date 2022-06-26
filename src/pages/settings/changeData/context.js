@@ -1,5 +1,5 @@
 const editDataContext = {
-    primaryButtonName: 'Сохранить',
-}
+  primaryButtonName: 'Сохранить',
+};
 
-export default editDataContext
+export default editDataContext;

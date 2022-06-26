@@ -1,6 +1,6 @@
 import {
-    default as buttonPrimary
-} from '../../components/buttons/buttonPrimary/buttonPrimary.tmpl'
+  default as buttonPrimary,
+} from '../../components/buttons/buttonPrimary/buttonPrimary.tmpl';
 
 const template = `
 <form class="entry-form">

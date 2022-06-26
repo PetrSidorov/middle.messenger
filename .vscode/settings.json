@@ -1,5 +1,10 @@
 {
-    "eslint.workingDirectories": ["src"],
+    "eslint.options": {
+        "rules": {
+          "no-debugger": "off"
+        }
+      },
+    "eslint.workingDirectories": [{ "mode": "auto" }],
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
     },

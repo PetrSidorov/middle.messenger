@@ -557,7 +557,6 @@ class Router {
         this.routes = routes;
     }
     init() {
-        console.log("init");
         window.addEventListener("hashchange", this.changeRoute);
         this.changeRoute();
     }
@@ -623,11 +622,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _404Tmpl = require("./404.tmpl");
 var _404TmplDefault = parcelHelpers.interopDefault(_404Tmpl);
-const context = {
-    handleClick: ()=>{
-        console.log("hello");
-    }
-};
+const context = {};
 exports.default = {
     context,
     template: (0, _404TmplDefault.default)
@@ -681,11 +676,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _500Tmpl = require("./500.tmpl");
 var _500TmplDefault = parcelHelpers.interopDefault(_500Tmpl);
-const context = {
-    handleClick: ()=>{
-        console.log("hello");
-    }
-};
+const context = {};
 exports.default = {
     context,
     template: (0, _500TmplDefault.default)
@@ -710,10 +701,7 @@ parcelHelpers.defineInteropFlag(exports);
 var _chatTmpl = require("./chat.tmpl");
 var _chatTmplDefault = parcelHelpers.interopDefault(_chatTmpl);
 const context = {
-    message: "Hello!",
-    handleClick: ()=>{
-        console.log("hello");
-    }
+    message: "Hello!"
 };
 exports.default = {
     context,
@@ -825,15 +813,16 @@ const context = {
     formHeading: "Login",
     primaryButtonName: "Sign in",
     secondaryButtonName: "Create account",
-    login: "Login",
+    login: "Enter your login here",
     login_label: "Login",
     password: "****",
     password_label: "Password",
     primaryButtonClick: ()=>{
+        window.event.preventDefault();
         document.location.href = "#chat";
     },
     secondaryButtonClick: ()=>{
-        console.log("hello");
+        window.event.preventDefault();
         document.location.href = "#registration";
     }
 };
@@ -896,22 +885,22 @@ var _registrationTmplDefault = parcelHelpers.interopDefault(_registrationTmpl);
 const context = {
     formHeading: "Registration",
     primaryButtonName: "Sign up",
-    email_label: "Email@yandex.ru",
+    email_label: "Email",
     email: "test@yandex.ru",
     login_label: "Login",
-    login: "Login",
-    first_name_label: "Ivan",
+    login: "Ivanich",
+    first_name_label: "First name",
     first_name: "Ivan",
-    second_name_label: "Ivanov",
+    second_name_label: "Last name",
     second_name: "Ivanov",
-    phone_label: "+7 (909) 888 88 88",
+    phone_label: "Phone number",
     phone: "+7 (909) 888 88 88",
     password_label: "Password",
     password: "*****",
     confirmPassword: "*****",
     confirmPassword_label: "Repeat password, please",
     primaryButtonClick: ()=>{
-        console.log("hello");
+        window.event.preventDefault();
         document.location.href = "#chat";
     }
 };
@@ -1006,7 +995,7 @@ const context = {
     primaryButtonClick: ()=>{
         const passingContext = clicked ? context : (0, _contextDefault.default);
         (0, _pageDefault.default).reRender((0, _changeDataTmplDefault.default), passingContext);
-        let editableSpans = document.querySelectorAll("[data-editable]");
+        const editableSpans = document.querySelectorAll("[data-editable]");
         editableSpans.forEach((element)=>{
             element.setAttribute("contenteditable", !clicked);
         });
@@ -1229,7 +1218,6 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _getJs = require("./get.js");
 var _emptyTemplatesCheckerJs = require("./emptyTemplatesChecker.js");
-var _loopThroughFieldsJs = require("./loopThroughFields.js");
 class Templator {
     TEMPLATE_REGEXP = /\{\{(.*?)\}\}/gi;
     constructor(template){
@@ -1248,9 +1236,7 @@ class Templator {
             const data = (0, _getJs.get)(ctx, tmplValue);
             if (typeof data === "undefined") (0, _emptyTemplatesCheckerJs.emptyTemplatesChecker)(key[1]);
             if (typeof data === "function") {
-                // console.log(data)
                 window[tmplValue] = data;
-                // console.log(window[tmplValue])
                 tmpl = tmpl.replace(new RegExp(key[0], "gi"), `window.${key[1].trim()}()`);
                 continue;
             }
@@ -1261,14 +1247,14 @@ class Templator {
 }
 exports.default = Templator;
 
-},{"./get.js":"b3dMR","./emptyTemplatesChecker.js":"a0DLY","./loopThroughFields.js":"6pfZR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"b3dMR":[function(require,module,exports) {
+},{"./get.js":"b3dMR","./emptyTemplatesChecker.js":"a0DLY","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"b3dMR":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "get", ()=>get);
 function get(obj, path, defaultValue) {
     const keys = path.split(".");
     let result = obj;
-    for (let key of keys){
+    for (const key of keys){
         result = result[key];
         if (result === undefined) return defaultValue;
     }
@@ -1283,14 +1269,6 @@ function emptyTemplatesChecker(keyName) {
     console.warn(`Please, provide ${keyName} parameter`);
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6pfZR":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "loopThroughFields", ()=>loopThroughFields);
-function loopThroughFields(data) {
-    console.log(data);
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["8h8mn","8lqZg"], "8lqZg", "parcelRequirefc40")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["8h8mn","8lqZg"], "8lqZg", "parcelRequiref367")
 
 //# sourceMappingURL=index.975ef6c8.js.map

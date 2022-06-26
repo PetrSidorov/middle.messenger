@@ -1,5 +1,5 @@
 {
-  "name": "test",
+  "name": "Chat",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -21,7 +21,8 @@
     "@parcel/resolver-glob": "^2.6.2",
     "cross-env": "^7.0.3",
     "cssnano": "^5.1.12",
-    "eslint": "^8.18.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^19.0.4",
     "parcel": "^2.6.2",
     "parcel-reporter-static-files-copy": "^1.3.4",
     "postcss": "^8.4.14",

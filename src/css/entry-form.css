@@ -50,7 +50,7 @@
     transition-timing-function: ease;
     transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
     position: absolute;
-    left: 25px;
+    left: 22px;
 }
 
 .entry-form__inputs{
