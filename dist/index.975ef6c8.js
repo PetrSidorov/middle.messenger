@@ -1204,7 +1204,7 @@ const template = `
 `;
 exports.default = template;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../../../components/buttons/buttonPrimary/buttonPrimary.tmpl":"bvroS","../../../components/buttons/buttonSuccess/buttonSuccess.tmpl":"14u4p","../../../components/buttons/buttonWarning/buttonWarning.tmpl":"kdMrN"}],"kfGDM":[function(require,module,exports) {
+},{"../../../components/buttons/buttonPrimary/buttonPrimary.tmpl":"bvroS","../../../components/buttons/buttonSuccess/buttonSuccess.tmpl":"14u4p","../../../components/buttons/buttonWarning/buttonWarning.tmpl":"kdMrN","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kfGDM":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "currentRoute", ()=>currentRoute);
